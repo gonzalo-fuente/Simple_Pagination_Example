@@ -2,6 +2,10 @@ const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
   const pageNumbers = [];
   const lastPage = Math.ceil(totalPosts / postsPerPage);
 
+  if (totalPosts === 0) {
+    return null;
+  }
+
   for (let i = 1; i <= lastPage; i++) {
     pageNumbers.push(i);
   }
